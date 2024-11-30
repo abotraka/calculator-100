@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ابو ربيع - الآلة الحاسبة العلمية</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="theme-switch">
+        <button onclick="toggleTheme()" id="themeButton">🌙</button>
+    </div>
+    <div class="keyboard-hints">
+        <button onclick="toggleHints()" id="hintsButton">⌨️ تعليمات لوحة المفاتيح</button>
+        <div id="hintsPanel" class="hints-panel hidden">
+            <h3>مفاتيح لوحة المفاتيح:</h3>
+            <ul>
+                <li>الأرقام: 0-9</li>
+                <li>العمليات: +, -, *, /, (, ), ^</li>
+                <li>المسح: Backspace, Delete, Escape</li>
+                <li>النتيجة: Enter أو =</li>
+                <li>الدوال العلمية:
+                    <ul>
+                        <li>s: sin</li>
+                        <li>c: cos</li>
+                        <li>t: tan</li>
+                        <li>r: sqrt (الجذر)</li>
+                        <li>l: log</li>
+                        <li>p: π</li>
+                        <li>e: e</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="calculator">
+        <div class="display">
+            <input type="text" id="result" readonly>
+        </div>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="backspace()">⌫</button>
+            <button onclick="appendOperator('(')">(</button>
+            <button onclick="appendOperator(')')">)</button>
+            
+            <button onclick="calculateTrig('sin')">sin</button>
+            <button onclick="calculateTrig('cos')">cos</button>
+            <button onclick="calculateTrig('tan')">tan</button>
+            <button onclick="appendOperator('^')">^</button>
+
+            <button onclick="calculateFunction('sqrt')">√</button>
+            <button onclick="calculateConstant('pi')">π</button>
+            <button onclick="calculateConstant('e')">e</button>
+            <button onclick="calculateFunction('log')">log</button>
+
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="appendOperator('/')">/</button>
+
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="appendOperator('*')">×</button>
+
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="appendOperator('-')">-</button>
+
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendOperator('+')">+</button>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
